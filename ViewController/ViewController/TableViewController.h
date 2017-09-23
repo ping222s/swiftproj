@@ -9,8 +9,5 @@
 #import <Cocoa/Cocoa.h>
 
 @interface TableViewController : NSViewController
-@property (weak) IBOutlet NSTableView *tableview;
 
-- (IBAction)clickRemove:(id)sender;
-- (IBAction)clickAdd:(id)sender;
 @end

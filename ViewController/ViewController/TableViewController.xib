@@ -8,8 +8,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="TableViewController">
             <connections>
+                <outlet property="ArrayCon" destination="aXU-dG-ruh" id="qWg-ZE-TOO"/>
                 <outlet property="removeBtn" destination="nBz-ho-Az5" id="5bU-Mf-pcK"/>
-                <outlet property="tableview" destination="yCM-VI-Frb" id="wPd-MW-IPx"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -69,10 +69,6 @@
                                         </prototypeCellViews>
                                     </tableColumn>
                                 </tableColumns>
-                                <connections>
-                                    <outlet property="dataSource" destination="-2" id="RHP-QE-2ce"/>
-                                    <outlet property="delegate" destination="-2" id="1yy-yp-2Sr"/>
-                                </connections>
                             </tableView>
                         </subviews>
                     </clipView>
@@ -128,6 +124,6 @@
                 <constraint firstItem="Wzx-4y-cbE" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="xjy-fm-Yr4"/>
             </constraints>
         </customView>
-        <userDefaultsController representsSharedInstance="YES" id="UJx-ih-402"/>
+        <arrayController id="aXU-dG-ruh"/>
     </objects>
 </document>
