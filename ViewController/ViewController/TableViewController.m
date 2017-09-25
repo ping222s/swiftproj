@@ -7,18 +7,26 @@
 //
 
 #import "TableViewController.h"
+#import "User.h"
 
 @interface TableViewController ()
 
-@property (strong) IBOutlet NSArrayController *ArrayCon;
+
 
 @end
 
 @implementation TableViewController
 
+//- (void)awakeFromNib{
+//   
+//}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do view setup here.
+    
+    
 }
 
 @end

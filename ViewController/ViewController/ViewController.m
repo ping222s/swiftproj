@@ -37,6 +37,12 @@ NSString *const kVideoTitle		= @"VideoViewController";
     // Update the view, if already loaded.
 }
 
+- (void)videoReady:(NSNotification *)notif
+{
+    // we have been notified by CustomVideoViewController that the video is ready to play
+    [self.videoViewController start:YES];
+}
+
 - (void)changeViewController:(NSInteger)whichViewTag
 {
     
@@ -45,23 +51,25 @@ NSString *const kVideoTitle		= @"VideoViewController";
     if ([self.myCurrentViewController view] != nil)
     {
         [[self.myCurrentViewController view] removeFromSuperview];	// remove the current view
-//
-//        if ([self.myCurrentViewController isKindOfClass:[VideoViewController class]])
-//        {
-//            // stop playing the video
-////            [(VideoViewController *)self.myCurrentViewController start:NO];
-//            
-//            // no longer interested in this notification
-////            [[NSNotificationCenter defaultCenter] removeObserver:self name:kVideoReadyNotification object:nil];
-//        }
+
+        if ([self.myCurrentViewController isKindOfClass:[VideoViewController class]])
+        {
+            // stop playing the video
+            [(VideoViewController *)self.myCurrentViewController start:NO];
+            
+            // no longer interested in this notification
+            [[NSNotificationCenter defaultCenter] removeObserver:self name:kVideoReadyNotification object:nil];
+        }
     }
     
     switch (whichViewTag) {
         case kImageView:
         {
-            _imageViewController = [[ImageViewController alloc] initWithNibName:kViewTitle bundle:nil];
+            if (self.imageViewController == nil) {
+                _imageViewController = [[ImageViewController alloc] initWithNibName:kViewTitle bundle:nil];
+            }
             _myCurrentViewController = self.imageViewController;
-            [self.myCurrentViewController setTitle:kViewTitle];
+            [self setTitle:kViewTitle];
             
             [_myTargetView addSubview:_myCurrentViewController.view];
             
@@ -73,9 +81,35 @@ NSString *const kVideoTitle		= @"VideoViewController";
             
         case kTableView:
         {
-            _tableViewController = [[TableViewController alloc] initWithNibName:kTableTitle bundle:nil];
+            if (self.tableViewController == nil){
+                _tableViewController = [[TableViewController alloc] initWithNibName:kTableTitle bundle:nil];
+            }
+            
             _myCurrentViewController = _tableViewController;
-            [self.myCurrentViewController setTitle:kTableTitle];
+            [self setTitle:kTableTitle];
+            
+            [_myTargetView addSubview:_myCurrentViewController.view];
+            
+            [_myCurrentViewController.view mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.edges.equalTo(_myTargetView);
+            }];
+        }
+            break;
+            
+        case kVideoView:
+        {
+            if (self.videoViewController == nil){
+                _videoViewController = [[VideoViewController alloc] initWithNibName:kVideoTitle bundle:nil];
+            }
+            
+            // listen for when the video is ready to play (used for initial loading)
+            [[NSNotificationCenter defaultCenter] addObserver:self
+                                                     selector:@selector(videoReady:)
+                                                         name:kVideoReadyNotification
+                                                       object:nil];
+
+            _myCurrentViewController = _videoViewController;
+            [self setTitle:kVideoTitle];
             
             [_myTargetView addSubview:_myCurrentViewController.view];
             
@@ -87,6 +121,8 @@ NSString *const kVideoTitle		= @"VideoViewController";
         default:
             break;
     }
+    
+    [self setRepresentedObject:[NSNumber numberWithUnsignedInteger:[[[self.myCurrentViewController view] subviews] count]]];
     
 }
 

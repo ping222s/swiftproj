@@ -20,5 +20,6 @@
 @property (nonatomic, assign) NSViewController *myCurrentViewController;
 @property (weak) IBOutlet NSView *myTargetView;
 
+
 @end
 

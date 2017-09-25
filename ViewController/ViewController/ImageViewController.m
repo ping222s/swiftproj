@@ -49,7 +49,7 @@
     [openPanel setAllowedFileTypes:fileTypes];
     [openPanel setDirectoryURL:[NSURL fileURLWithPath:@"/Library/Desktop Pictures/"]];
     [openPanel beginSheetModalForWindow:self.view.window completionHandler:^(NSInteger result) {
-        if (result == NSOKButton)
+        if (result == NSModalResponseOK)
         {
             if ([[openPanel URL] isFileURL])
             {

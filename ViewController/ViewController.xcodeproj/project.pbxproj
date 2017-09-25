@@ -22,6 +22,8 @@
 		476E78A71F74E49C00773AEB /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 476E78A51F74E49C00773AEB /* VideoViewController.xib */; };
 		476E78AA1F74EED500773AEB /* LakeDonPedro.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 476E78A81F74EED400773AEB /* LakeDonPedro.jpg */; };
 		476E78AB1F74EED500773AEB /* adam.mov in Resources */ = {isa = PBXBuildFile; fileRef = 476E78A91F74EED400773AEB /* adam.mov */; };
+		47DF3CFD1F789E29009013EF /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 47DF3CFC1F789E28009013EF /* User.m */; };
+		47DF3D001F78A50B009013EF /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 47DF3CFF1F78A50B009013EF /* Document.m */; };
 		F10CCDABC80257F90D4B696C /* libPods-ViewController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0CA4B12384105088483525 /* libPods-ViewController.a */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +71,10 @@
 		476E78A51F74E49C00773AEB /* VideoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoViewController.xib; sourceTree = "<group>"; };
 		476E78A81F74EED400773AEB /* LakeDonPedro.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LakeDonPedro.jpg; sourceTree = "<group>"; };
 		476E78A91F74EED400773AEB /* adam.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = adam.mov; sourceTree = "<group>"; };
+		47DF3CFB1F789E28009013EF /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		47DF3CFC1F789E28009013EF /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		47DF3CFE1F78A50B009013EF /* Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
+		47DF3CFF1F78A50B009013EF /* Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
 		7F5F25F6D5A8D4BFAFDE4BD9 /* Pods-ViewController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViewController.release.xcconfig"; path = "Pods/Target Support Files/Pods-ViewController/Pods-ViewController.release.xcconfig"; sourceTree = "<group>"; };
 		BC0CA4B12384105088483525 /* libPods-ViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ViewController.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C449F2734F59C95D85DEFE2B /* Pods-ViewController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViewController.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ViewController/Pods-ViewController.debug.xcconfig"; sourceTree = "<group>"; };
@@ -142,6 +148,7 @@
 		476E78681F74BE7100773AEB /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				47DF3CFA1F789DC9009013EF /* Models */,
 				476E78691F74BE7100773AEB /* AppDelegate.h */,
 				476E786A1F74BE7100773AEB /* AppDelegate.m */,
 				476E786F1F74BE7100773AEB /* ViewController.h */,
@@ -156,6 +163,8 @@
 				476E78A01F74E47800773AEB /* TableViewController.xib */,
 				476E78A31F74E49C00773AEB /* VideoViewController.h */,
 				476E78A41F74E49C00773AEB /* VideoViewController.m */,
+				47DF3CFE1F78A50B009013EF /* Document.h */,
+				47DF3CFF1F78A50B009013EF /* Document.m */,
 				476E78A51F74E49C00773AEB /* VideoViewController.xib */,
 				476E78A81F74EED400773AEB /* LakeDonPedro.jpg */,
 				476E78A91F74EED400773AEB /* adam.mov */,
@@ -189,6 +198,15 @@
 				476E788D1F74BE7200773AEB /* Info.plist */,
 			);
 			path = ViewControllerUITests;
+			sourceTree = "<group>";
+		};
+		47DF3CFA1F789DC9009013EF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				47DF3CFB1F789E28009013EF /* User.h */,
+				47DF3CFC1F789E28009013EF /* User.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -383,8 +401,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				476E78711F74BE7100773AEB /* ViewController.m in Sources */,
+				47DF3CFD1F789E29009013EF /* User.m in Sources */,
 				476E786E1F74BE7100773AEB /* main.m in Sources */,
 				476E78A61F74E49C00773AEB /* VideoViewController.m in Sources */,
+				47DF3D001F78A50B009013EF /* Document.m in Sources */,
 				476E789C1F74E46200773AEB /* ImageViewController.m in Sources */,
 				476E78A11F74E47800773AEB /* TableViewController.m in Sources */,
 				476E786B1F74BE7100773AEB /* AppDelegate.m in Sources */,

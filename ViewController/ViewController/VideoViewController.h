@@ -7,7 +7,17 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <AVFoundation/AVFoundation.h>
 
-@interface VideoViewController : NSViewController
+extern NSString *kVideoReadyNotification;
+
+@interface VideoViewController : NSViewController{
+    AVPlayer *player;
+}
+
+@property (readonly) BOOL videoIsReady;
+@property (readonly) BOOL playingForward;
+
+- (void)start:(BOOL)start;
 
 @end

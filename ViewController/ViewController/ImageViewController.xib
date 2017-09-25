@@ -28,8 +28,8 @@
                     </textFieldCell>
                 </textField>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="90d-5C-U21">
-                    <rect key="frame" x="167" y="3" width="71" height="32"/>
-                    <buttonCell key="cell" type="push" title="open" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="iLQ-9U-T1R">
+                    <rect key="frame" x="162" y="3" width="82" height="32"/>
+                    <buttonCell key="cell" type="push" title="open..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="iLQ-9U-T1R">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>

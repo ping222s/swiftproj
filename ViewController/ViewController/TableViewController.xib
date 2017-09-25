@@ -8,8 +8,6 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="TableViewController">
             <connections>
-                <outlet property="ArrayCon" destination="aXU-dG-ruh" id="qWg-ZE-TOO"/>
-                <outlet property="removeBtn" destination="nBz-ho-Az5" id="5bU-Mf-pcK"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -58,7 +56,7 @@
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                         <connections>
-                                                            <binding destination="hWg-DL-ynp" name="value" keyPath="objectValue" id="R7g-yd-J6p"/>
+                                                            <binding destination="hWg-DL-ynp" name="value" keyPath="objectValue.userName" id="qhZ-Ad-XGC"/>
                                                         </connections>
                                                     </textField>
                                                 </subviews>
@@ -69,6 +67,9 @@
                                         </prototypeCellViews>
                                     </tableColumn>
                                 </tableColumns>
+                                <connections>
+                                    <binding destination="aXU-dG-ruh" name="content" keyPath="arrangedObjects" id="XYf-Ya-r63"/>
+                                </connections>
                             </tableView>
                         </subviews>
                     </clipView>
@@ -95,7 +96,7 @@
                         <font key="font" metaFont="smallSystem"/>
                     </buttonCell>
                     <connections>
-                        <action selector="clickRemove:" target="-2" id="NGG-Cx-rsp"/>
+                        <action selector="remove:" target="aXU-dG-ruh" id="BPv-CV-KAN"/>
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="35B-Ux-2yb">
@@ -108,7 +109,7 @@
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                     <connections>
-                        <action selector="clickAdd:" target="-2" id="Cy4-DV-U4Q"/>
+                        <action selector="add:" target="aXU-dG-ruh" id="whj-ZQ-hhQ"/>
                     </connections>
                 </button>
             </subviews>
@@ -124,6 +125,12 @@
                 <constraint firstItem="Wzx-4y-cbE" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="xjy-fm-Yr4"/>
             </constraints>
         </customView>
-        <arrayController id="aXU-dG-ruh"/>
+        <arrayController objectClassName="User" id="aXU-dG-ruh">
+            <connections>
+                <binding destination="Msu-Zo-jxy" name="contentArray" keyPath="dataArr" id="wNt-o1-wjl"/>
+                <outlet property="content" destination="-2" id="48w-tO-7vV"/>
+            </connections>
+        </arrayController>
+        <customObject id="Msu-Zo-jxy" customClass="Document"/>
     </objects>
 </document>
