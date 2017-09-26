@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="CollectionViewItem" customModule="CollectionView" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY" customClass="CollectionViewItemView" customModule="CollectionView" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Teq-aS-sGT">
+                    <rect key="frame" x="222" y="42" width="37" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="iTb-6H-8Zc">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xXo-Qx-QPV">
+                    <rect key="frame" x="382" y="26" width="48" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="48" id="D3Z-ha-X8Q"/>
+                        <constraint firstAttribute="height" constant="48" id="toh-1K-LPO"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="4yB-yo-tYx"/>
+                </imageView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="xXo-Qx-QPV" secondAttribute="trailing" constant="50" id="2kf-nR-lTx"/>
+                <constraint firstItem="xXo-Qx-QPV" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="5W2-Uj-Fxb"/>
+                <constraint firstItem="Teq-aS-sGT" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="AJi-na-oWY"/>
+                <constraint firstItem="Teq-aS-sGT" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="DxB-zw-wJQ"/>
+            </constraints>
+            <connections>
+                <outlet property="imgv" destination="xXo-Qx-QPV" id="yQJ-bm-bfC"/>
+                <outlet property="lblField" destination="Teq-aS-sGT" id="PhK-2E-Uww"/>
+            </connections>
+        </customView>
+        <customObject id="MY4-Pu-o2M" customClass="CollectionViewItem" customModule="CollectionView" customModuleProvider="target"/>
+    </objects>
+</document>
